@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CielraEYE | まつげ・眉毛専門店 フランチャイズ募集</title>
+  <meta name="description" content="元HOT PEPPER BeautyのSVが集客を直接サポート。初月から黒字化可能なまつげ眉毛専門店CielraEYEのフランチャイズ加盟募集中。開業資金400〜500万円。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown-dark: #3d2b1f;
+      --brown-mid: #7a5230;
+      --brown-warm: #a8784a;
+      --brown-light: #c9a87c;
+      --beige: #f5ede2;
+      --beige-dark: #ede0d0;
+      --cream: #faf7f2;
+      --white: #ffffff;
+      --gray-light: #f0ece6;
+      --gray-mid: #9b8e84;
+      --charcoal: #2a221c;
+      --accent: #c17f42;
+      --accent-dark: #9a6030;
+      --red-highlight: #c0392b;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--beige-dark);
+      padding: 0 5%;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--brown-dark);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--brown-mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--accent-dark) !important; color: var(--white) !important; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+
+    /* ─── HERO ─── */
+    #top {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--brown-dark) 0%, #5c3d22 55%, var(--brown-warm) 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 64px;
+    }
+    .hero-texture {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 70% 30%, rgba(201,168,124,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 40%);
+    }
+    .hero-lines {
+      position: absolute;
+      right: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(201,168,124,0.15);
+      border-radius: 50%;
+    }
+    .hero-lines::before {
+      content: '';
+      position: absolute;
+      inset: 40px;
+      border: 1px solid rgba(201,168,124,0.1);
+      border-radius: 50%;
+    }
+    .hero-lines::after {
+      content: '';
+      position: absolute;
+      inset: 90px;
+      border: 1px solid rgba(201,168,124,0.08);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5% 5%;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201,168,124,0.2);
+      border: 1px solid rgba(201,168,124,0.5);
+      color: var(--brown-light);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--brown-light);
+      display: block;
+    }
+    .hero-subtitle {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.9;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-kpi-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .hero-kpi {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,124,0.3);
+      padding: 1rem 1.4rem;
+      border-radius: 4px;
+      min-width: 140px;
+    }
+    .hero-kpi-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--brown-light);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .hero-kpi-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+    .hero-cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(201,168,124,0.5);
+      color: var(--brown-light);
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-outline:hover {
+      background: rgba(201,168,124,0.1);
+      color: var(--white);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 5rem 5%; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--brown-dark);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-size: 1rem;
+      color: var(--gray-mid);
+      max-width: 560px;
+      line-height: 1.9;
+      margin-bottom: 3rem;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── PAIN / WHY NOW ─── */
+    #pain {
+      background: var(--white);
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .pain-card {
+      border: 1px solid var(--beige-dark);
+      padding: 1.8rem;
+      border-radius: 4px;
+      position: relative;
+      background: var(--cream);
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .pain-card:hover { box-shadow: 0 8px 32px rgba(61,43,31,0.08); transform: translateY(-3px); }
+    .pain-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--beige-dark);
+      position: absolute;
+      top: 0.5rem; right: 1rem;
+      line-height: 1;
+    }
+    .pain-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 0.6rem;
+      position: relative;
+    }
+    .pain-card p {
+      font-size: 0.85rem;
+      color: var(--gray-mid);
+      line-height: 1.8;
+    }
+
+    /* ─── MERIT: 3 BENEFITS ─── */
+    #merit {
+      background: var(--beige);
+    }
+    .merit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .merit-card {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.06);
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .merit-card:hover { box-shadow: 0 12px 40px rgba(61,43,31,0.12); transform: translateY(-4px); }
+    .merit-card-head {
+      background: var(--brown-dark);
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .merit-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--brown-light);
+      line-height: 1;
+    }
+    .merit-card-head h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+    }
+    .merit-card-body { padding: 1.6rem 1.8rem; }
+    .merit-highlight {
+      background: var(--beige);
+      border-left: 3px solid var(--accent);
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0 2px 2px 0;
+    }
+    .merit-highlight-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .merit-highlight-label {
+      font-size: 0.78rem;
+      color: var(--brown-mid);
+      font-weight: 500;
+    }
+    .merit-note {
+      font-size: 0.75rem;
+      color: var(--gray-mid);
+      border-top: 1px solid var(--beige-dark);
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      line-height: 1.7;
+    }
+    .merit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .merit-list li {
+      font-size: 0.88rem;
+      color: var(--brown-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      line-height: 1.6;
+    }
+    .merit-list li::before {
+      content: '▸';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+
+    /* ─── FEATURES: 3 STRENGTHS ─── */
+    #features {
+      background: var(--white);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      padding: 2rem;
+      border: 1px solid var(--beige-dark);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(168,120,74,0.1);
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--brown-light));
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 0.8rem;
+    }
+    .feature-card p {
+      font-size: 0.86rem;
+      color: var(--gray-mid);
+      line-height: 1.85;
+    }
+    .feature-card .tag {
+      display: inline-block;
+      background: var(--beige);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      margin-top: 0.8rem;
+    }
+
+    /* ─── SUPPORT ─── */
+    #support {
+      background: var(--brown-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #support::before {
+      content: '';
+      position: absolute;
+      right: -100px; top: -100px;
+      width: 600px; height: 600px;
+      border: 1px solid rgba(201,168,124,0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #support .section-title { color: var(--white); }
+    #support .section-lead { color: rgba(255,255,255,0.6); }
+    #support .section-label { color: var(--brown-light); }
+    #support .divider { background: var(--brown-light); }
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .support-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,124,0.2);
+      border-radius: 4px;
+      padding: 1.6rem;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .support-card:hover {
+      background: rgba(201,168,124,0.08);
+      border-color: rgba(201,168,124,0.4);
+    }
+    .support-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .support-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--brown-light);
+      margin-bottom: 0.6rem;
+    }
+    .support-card p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+    }
+    .support-card .support-sub {
+      font-size: 0.75rem;
+      color: rgba(201,168,124,0.7);
+      margin-top: 0.6rem;
+      font-style: italic;
+    }
+
+    /* ─── NUMBERS ─── */
+    #numbers {
+      background: var(--beige);
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .number-card {
+      text-align: center;
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.05);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .number-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,43,31,0.1); }
+    .number-card .big-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .number-card .big-num span { font-size: 1.6rem; }
+    .number-card .num-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--brown-mid);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .number-card .num-note {
+      font-size: 0.72rem;
+      color: var(--gray-mid);
+    }
+
+    /* ─── VOICE / REVIEW ─── */
+    #voice {
+      background: var(--white);
+    }
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .voice-card {
+      background: var(--cream);
+      border: 1px solid var(--beige-dark);
+      border-radius: 6px;
+      padding: 1.8rem;
+      position: relative;
+    }
+    .voice-card::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--beige-dark);
+      position: absolute;
+      top: -0.5rem;
+      left: 1rem;
+      line-height: 1;
+    }
+    .voice-stars {
+      color: #f0a500;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .voice-card p {
+      font-size: 0.88rem;
+      color: var(--brown-mid);
+      line-height: 1.85;
+      position: relative;
+      z-index: 1;
+    }
+    .voice-meta {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .voice-platform {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .voice-date {
+      font-size: 0.7rem;
+      color: var(--gray-mid);
+    }
+    .review-summary {
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .review-badge {
+      background: var(--brown-dark);
+      color: var(--white);
+      padding: 1.2rem 2rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .review-badge .r-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--brown-light);
+      line-height: 1;
+      display: block;
+    }
+    .review-badge .r-label { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+
+    /* ─── FLOW ─── */
+    #flow {
+      background: var(--beige);
+    }
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0;
+      position: relative;
+      margin-top: 2rem;
+    }
+    .flow-step {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '▶';
+      position: absolute;
+      right: -0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--brown-light);
+      font-size: 0.8rem;
+      z-index: 1;
+    }
+    .flow-step-num {
+      width: 44px;
+      height: 44px;
+      background: var(--brown-dark);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 auto 0.8rem;
+    }
+    .flow-step h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      margin-bottom: 0.4rem;
+    }
+    .flow-step p {
+      font-size: 0.72rem;
+      color: var(--gray-mid);
+      line-height: 1.6;
+    }
+    @media (max-width: 640px) {
+      .flow-steps { grid-template-columns: 1fr; }
+      .flow-step:not(:last-child)::after {
+        content: '▼';
+        right: 50%; top: auto; bottom: -0.4rem;
+        transform: translateX(50%);
+      }
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      background: var(--white);
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 720px; }
+    .faq-item {
+      border: 1px solid var(--beige-dark);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: var(--cream);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--beige); }
+    .faq-q-text {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--brown-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .faq-q-text::before {
+      content: 'Q';
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+    .faq-toggle {
+      color: var(--accent);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+      font-size: 0.86rem;
+      color: var(--gray-mid);
+      line-height: 1.85;
+      background: var(--white);
+      border-top: 1px solid var(--beige-dark);
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: linear-gradient(160deg, var(--brown-dark), #5c3d22);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      left: -150px; bottom: -150px;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(201,168,124,0.1);
+      border-radius: 50%;
+    }
+    #contact .section-title { color: var(--white); }
+    #contact .section-lead { color: rgba(255,255,255,0.65); }
+    #contact .section-label { color: var(--brown-light); }
+    #contact .divider { background: var(--brown-light); }
+    .contact-form {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,124,0.2);
+      border-radius: 6px;
+      padding: 2.5rem;
+      max-width: 600px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.05em;
+    }
+    .form-group label .req {
+      color: var(--brown-light);
+      margin-left: 0.3rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,124,0.3);
+      border-radius: 3px;
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--brown-light); }
+    .form-group select option { background: var(--brown-dark); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 1.1rem 3rem;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      border-radius: 2px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.25s;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+    .contact-alt {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-alt-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.86rem;
+    }
+    .contact-alt-item strong { color: var(--brown-light); font-size: 1rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal);
+      padding: 2.5rem 5%;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--brown-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .footer-company {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ─── FLOATING CTA ─── */
+    .floating-cta {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.6rem;
+    }
+    .floating-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.8rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(168,120,74,0.5);
+      letter-spacing: 0.05em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fadeUp 0.6s 1.5s both;
+    }
+    .floating-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(168,120,74,0.6); }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .fadein { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+    .fadein.visible { opacity: 1; transform: translateY(0); }
+    .fadein-delay-1 { transition-delay: 0.1s; }
+    .fadein-delay-2 { transition-delay: 0.2s; }
+    .fadein-delay-3 { transition-delay: 0.3s; }
+    .fadein-delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Cielra<span>EYE</span></a>
+    <ul class="nav-links">
+      <li><a href="#merit">加盟メリット</a></li>
+      <li><a href="#features">特徴</a></li>
+      <li><a href="#support">サポート体制</a></li>
+      <li><a href="#numbers">実績数値</a></li>
+      <li><a href="#flow">開業の流れ</a></li>
+      <li><a href="#contact" class="nav-cta">無料相談する</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top">
+  <div class="hero-texture"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-inner">
+    <p class="hero-badge">FC FRANCHISE RECRUITMENT 2024</p>
+    <h1 class="hero-title">
+      まつげ・眉毛の専門店<br>
+      <em>CielraEYE</em>
+      フランチャイズ募集
+    </h1>
+    <p class="hero-subtitle">
+      元HOT PEPPER BeautyのSVが集客を直接サポート。<br>
+      積み上げ型のリピートビジネスで、<strong style="color:#c9a87c">初月から黒字化</strong>を実現したFCモデル。<br>
+      接客品質を数値で管理し、ファンが自然とついてくる仕組みを提供します。
+    </p>
+    <div class="hero-kpi-row">
+      <div class="hero-kpi">
+        <div class="hero-kpi-num">¥400<span style="font-size:1.2rem">〜</span></div>
+        <div class="hero-kpi-label">開業資金（万円）</div>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num">70<span style="font-size:1.2rem">%</span></div>
+        <div class="hero-kpi-label">次回予約率</div>
+      </div>
+      <div class="hero-kpi">
+        <div class="hero-kpi-num">4.9<span style="font-size:1.2rem">★</span></div>
+        <div class="hero-kpi-label">Google口コミ平均（2ヶ月目）</div>
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">無料で資料請求・相談する</a>
+      <a href="#merit" class="btn-outline">加盟メリットを見る</a>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- PAIN: こんな悩みありませんか -->
+<section id="pain">
+  <div class="section-inner">
+    <p class="section-label fadein">CHALLENGE</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">独立・新規事業を検討中の方へ</h2>
+    <p class="section-lead fadein fadein-delay-2">こんな課題を感じていませんか？</p>
+    <div class="pain-grid">
+      <div class="pain-card fadein fadein-delay-1">
+        <div class="pain-card-num">01</div>
+        <h3>集客が読めず、開業後が不安</h3>
+        <p>一般的なサロンFCは集客ノウハウが属人的。予約が入るか分からない状態での開業は精神的にも負担が大きい。</p>
+      </div>
+      <div class="pain-card fadein fadein-delay-2">
+        <div class="pain-card-num">02</div>
+        <h3>初期投資が大きすぎる</h3>
+        <p>業界一般的なサロン系FCは自己資金300万円以上が当たり前。それでも黒字化まで数ヶ月〜1年以上かかるケースも。</p>
+      </div>
+      <div class="pain-card fadein fadein-delay-3">
+        <div class="pain-card-num">03</div>
+        <h3>スタッフの技術・接客を教えられるか不安</h3>
+        <p>施術品質と接客品質の両方を整えるのは難しい。オーナー自身が技術者でない場合は特に不安が大きい。</p>
+      </div>
+      <div class="pain-card fadein fadein-delay-4">
+        <div class="pain-card-num">04</div>
+        <h3>リピートが続かず売上が安定しない</h3>
+        <p>新規集客にコストをかけ続けても、リピーターが育たなければ収益は安定しない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERIT: 3つのメリット -->
+<section id="merit">
+  <div class="section-inner">
+    <p class="section-label fadein">3 MERITS</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">CielraEYE FC加盟<br>3つのメリット</h2>
+    <p class="section-lead fadein fadein-delay-2">FC化を見据えて設計されたモデルだから、短期で投資回収が可能です。</p>
+    <div class="merit-grid">
+      <!-- 1 -->
+      <div class="merit-card fadein fadein-delay-1">
+        <div class="merit-card-head">
+          <div class="merit-card-num">01</div>
+          <h3>積み上げ型ビジネスで<br>収益性が高い</h3>
+        </div>
+        <div class="merit-card-body">
+          <div class="merit-highlight">
+            <div class="merit-highlight-num">¥1,100<span style="font-size:1rem">万/年</span></div>
+            <div class="merit-highlight-label">営業利益（都心型1店舗の場合）</div>
+          </div>
+          <ul class="merit-list">
+            <li>スタッフ1名あたりの売上70万〜100万円</li>
+            <li>次回予約率70%のリピートモデル</li>
+            <li>翌月予約が4〜5割埋まっている安心感</li>
+            <li>3店舗運営で営業利益約3,300万円/年も視野</li>
+          </ul>
+          <p class="merit-note">※一般的なサロン系FCは赤字500〜600万前後が相場。CielraEYEは設計段階から黒字構造。</p>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="merit-card fadein fadein-delay-2">
+        <div class="merit-card-head">
+          <div class="merit-card-num">02</div>
+          <h3>低コスト・低リスクで<br>始められる</h3>
+        </div>
+        <div class="merit-card-body">
+          <div class="merit-highlight">
+            <div class="merit-highlight-num">¥400〜500<span style="font-size:1rem">万</span></div>
+            <div class="merit-highlight-label">開業資金（一般FCの半分以下も）</div>
+          </div>
+          <ul class="merit-list">
+            <li>積み上げ型だから初月から黒字化が可能</li>
+            <li>初期投資は1〜2年以内に回収可能</li>
+            <li>一般サロン系FCは開業資金300〜600万が相場</li>
+            <li>不必要な設備投資を排除したコンパクト設計</li>
+          </ul>
+          <p class="merit-note">※物件状況・エリアによって変動します。個別にご相談ください。</p>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="merit-card fadein fadein-delay-3">
+        <div class="merit-card-head">
+          <div class="merit-card-num">03</div>
+          <h3>お客様に喜ばれ<br>ファンになってもらえる</h3>
+        </div>
+        <div class="merit-card-body">
+          <div class="merit-highlight">
+            <div class="merit-highlight-num">4.95<span style="font-size:1rem">★ / 4.9★</span></div>
+            <div class="merit-highlight-label">ホットペッパー / Google MAP 口コミ（開業2ヶ月目）</div>
+          </div>
+          <ul class="merit-list">
+            <li>入店〜帰宅までの接客をマニュアル化</li>
+            <li>スクリプトシートで接客品質を可視化・管理</li>
+            <li>まつげ＋眉毛のW施術で1回あたりの満足度UP</li>
+            <li>3回目まで初回価格で通い続けやすい設計</li>
+          </ul>
+          <p class="merit-note">高いリピート率が安定した月次売上をつくります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES: 3つの特徴 -->
+<section id="features">
+  <div class="section-inner">
+    <p class="section-label fadein">3 FEATURES</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">CielraEYEが<br>選ばれる3つの理由</h2>
+    <p class="section-lead fadein fadein-delay-2">「なぜ他社ではなくCielraEYEなのか？」に答えるための仕組みがあります。</p>
+    <div class="features-grid">
+      <div class="feature-card fadein fadein-delay-1">
+        <div class="feature-icon">👁️</div>
+        <h3>まつげ＋眉毛のW施術で<br>競合と差別化</h3>
+        <p>眉毛だけ・まつげパーマだけという単品特化ではなく、両方をセットで高品質に提供できるのがCielraEYEの強み。お客様を取りこぼさず、1回の来店単価を自然に上げられます。</p>
+        <span class="tag">単体もセット対応</span>
+      </div>
+      <div class="feature-card fadein fadein-delay-2">
+        <div class="feature-icon">📊</div>
+        <h3>接客品質を数値で管理する<br>スクリプト設計</h3>
+        <p>施術時間はコンパクトに、余った時間を「接客」に充てる独自設計。接客マニュアルはスクリプトシートで詳細に管理され、スタッフごとの善し悪しが可視化されるため、オーナーが介入しやすい。</p>
+        <span class="tag">接客の善し悪しを可視化</span>
+      </div>
+      <div class="feature-card fadein fadein-delay-3">
+        <div class="feature-icon">🔄</div>
+        <h3>料金設計＋接客設計で<br>自然にリピートする仕組み</h3>
+        <p>3回目まで初回料金を維持し、4回目以降は約1.4倍に。「通い続けたい」と感じてもらった後に単価が上がる設計で、解約率・離脱率を最小化。積み上げ型の安定収益を実現します。</p>
+        <span class="tag">4回目から1.4倍の料金設計</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT: サポート体制 -->
+<section id="support">
+  <div class="section-inner">
+    <p class="section-label fadein">SUPPORT</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">業界経験者が揃う<br>手厚いサポート体制</h2>
+    <p class="section-lead fadein fadein-delay-2">本部には集客・技術・営業のプロが在籍。スピード感を持って開業をバックアップします。</p>
+    <div class="support-grid">
+      <div class="support-card fadein fadein-delay-1">
+        <div class="support-card-icon">🔥</div>
+        <h3>元HOT PEPPER Beauty SV<br>による集客サポート</h3>
+        <p>ホットペッパービューティーの掲載最適化を元SVが直接担当。PV数・予約数を平均1.2倍に改善し、月90予約・6割稼働を目指します。</p>
+        <p class="support-sub">1日1〜2件の差が月間売上を大きく左右します</p>
+      </div>
+      <div class="support-card fadein fadein-delay-2">
+        <div class="support-card-icon">✂️</div>
+        <h3>業界トレーナー歴6年の<br>技術・接客指導</h3>
+        <p>まつげ・眉毛施術の専門トレーナーが技術から接客までを一貫指導。オーナーが技術者でなくても安心して開業できます。</p>
+        <p class="support-sub">施術品質と接客品質の両立を実現</p>
+      </div>
+      <div class="support-card fadein fadein-delay-3">
+        <div class="support-card-icon">💼</div>
+        <h3>代表直伝のtoC営業・<br>クロージングノウハウ</h3>
+        <p>ペットショップで月商1,500万円・ピラティスで契約率70%・リピート率65%を達成した代表が、売れる接客・クロージングを直接伝授します。</p>
+        <p class="support-sub">業種を超えて実証された営業メソッド</p>
+      </div>
+      <div class="support-card fadein fadein-delay-4">
+        <div class="support-card-icon">📋</div>
+        <h3>ホットペッパー担当者＋<br>トレーナーが全て内製化</h3>
+        <p>外注に頼らず自社内に集客・技術・接客のプロが全員在籍。意思決定がスピーディで、課題が出たらすぐに対応できます。</p>
+        <p class="support-sub">スピード感を持って対応・集客・オープン</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS: 実績数値 -->
+<section id="numbers">
+  <div class="section-inner">
+    <p class="section-label fadein">NUMBERS</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">数字で見るCielraEYE</h2>
+    <p class="section-lead fadein fadein-delay-2">感覚ではなくデータで裏付けられた収益モデルです。</p>
+    <div class="numbers-grid">
+      <div class="number-card fadein fadein-delay-1">
+        <div class="big-num">70<span>〜100</span></div>
+        <div class="num-label">スタッフ1名あたり月売上（万円）</div>
+        <div class="num-note">高回転サロン水準の施術設計</div>
+      </div>
+      <div class="number-card fadein fadein-delay-2">
+        <div class="big-num">70<span>%</span></div>
+        <div class="num-label">次回予約率</div>
+        <div class="num-note">翌月の4〜5割が予約済みの状態</div>
+      </div>
+      <div class="number-card fadein fadein-delay-3">
+        <div class="big-num">90<span>件</span></div>
+        <div class="num-label">月間予約数（目標）</div>
+        <div class="num-note">6割稼働で達成できるモデル設計</div>
+      </div>
+      <div class="number-card fadein fadein-delay-4">
+        <div class="big-num">1.2<span>倍</span></div>
+        <div class="num-label">HPBサポートによるPV・予約増加率</div>
+        <div class="num-note">元SVのノウハウで平均1.2倍向上</div>
+      </div>
+      <div class="number-card fadein fadein-delay-1">
+        <div class="big-num">1,100<span>万</span></div>
+        <div class="num-label">年間営業利益（都心型1店舗）</div>
+        <div class="num-note">一般FCは赤字500〜600万が相場</div>
+      </div>
+      <div class="number-card fadein fadein-delay-2">
+        <div class="big-num">1〜2<span>年</span></div>
+        <div class="num-label">初期投資回収期間</div>
+        <div class="num-note">初月から黒字化の実績あり</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE: 口コミ -->
+<section id="voice">
+  <div class="section-inner">
+    <p class="section-label fadein">REVIEWS</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">お客様の声</h2>
+    <p class="section-lead fadein fadein-delay-2">CielraEYEに来店されたお客様からの実際のレビュー（オープン2ヶ月目の店舗）</p>
+    <div class="voice-grid">
+      <div class="voice-card fadein fadein-delay-1">
+        <div class="voice-stars">★★★★★</div>
+        <p>自分の希望通りのまつげパーマのデザインになってとてもよかったです！デザインの相談にも乗ってくれて助かりました</p>
+        <div class="voice-meta">
+          <span class="voice-platform">Google MAP</span>
+          <span class="voice-date">2日前</span>
+        </div>
+      </div>
+      <div class="voice-card fadein fadein-delay-2">
+        <div class="voice-stars">★★★★★</div>
+        <p>自分に似合う形を教えてくれ、自分の理想の眉毛に近づくようカウンセリングしてくれました。眉毛のとても綺麗になり、通い続けたいと感じました。</p>
+        <div class="voice-meta">
+          <span class="voice-platform">Google MAP</span>
+          <span class="voice-date">2日前</span>
+        </div>
+      </div>
+      <div class="voice-card fadein fadein-delay-3">
+        <div class="voice-stars">★★★★★</div>
+        <p>とても丁寧に接客していただけました。また次回もお願いしたいと思います。</p>
+        <div class="voice-meta">
+          <span class="voice-platform">ホットペッパービューティー</span>
+          <span class="voice-date">2026/4/11</span>
+        </div>
+      </div>
+      <div class="voice-card fadein fadein-delay-4">
+        <div class="voice-stars">★★★★★</div>
+        <p>まつ毛パーマと眉毛waxをお願いして、眉毛も形が良くなり、とても満足でした。またよろしくお願い致します。</p>
+        <div class="voice-meta">
+          <span class="voice-platform">ホットペッパービューティー</span>
+          <span class="voice-date">2026/4/9</span>
+        </div>
+      </div>
+    </div>
+    <div class="review-summary fadein">
+      <div class="review-badge">
+        <span class="r-num">4.9★</span>
+        <span class="r-label">Google MAP（58件）</span>
+      </div>
+      <div class="review-badge">
+        <span class="r-num">4.95★</span>
+        <span class="r-label">ホットペッパービューティー（19件）</span>
+      </div>
+      <p style="font-size:0.82rem;color:var(--gray-mid);">※どちらもオープン2ヶ月目の店舗の実績です。<br>接客マニュアル化の成果が口コミに直結しています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW: 開業の流れ -->
+<section id="flow">
+  <div class="section-inner">
+    <p class="section-label fadein">FLOW</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">オープンまでの流れ</h2>
+    <p class="section-lead fadein fadein-delay-2">ご相談から開業まで、本部がフルサポートします。</p>
+    <div class="flow-steps fadein">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <h4>無料相談・<br>資料請求</h4>
+        <p>LINEまたはフォームからお気軽に</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <h4>個別ヒアリング・<br>説明会</h4>
+        <p>ご状況に合わせた詳細説明</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <h4>FC契約・<br>物件選定</h4>
+        <p>エリア・物件選びもサポート</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <h4>技術・接客<br>研修</h4>
+        <p>6年のトレーナーが直接指導</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">5</div>
+        <h4>HPB掲載・<br>集客準備</h4>
+        <p>元SVが開業前から仕込み開始</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">6</div>
+        <h4>グランドオープン</h4>
+        <p>初月から黒字化を目指す</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <p class="section-label fadein">FAQ</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">よくある質問</h2>
+    <div class="faq-list fadein fadein-delay-2">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">開業未経験でも大丈夫ですか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">はい、開業経験がない方でも問題ありません。業界トレーナー歴6年のスタッフが技術・接客を一から指導します。また、集客はホットペッパービューティー元SVが直接担当するため、オーナーが集客の専門知識を持っていなくても安心です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">美容業界の経験がなくても加盟できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">はい、可能です。CielraEYEは施術・接客・集客の全てをマニュアル化・内製化しており、異業種出身のオーナーが成功できるモデルを設計しています。代表自身もペットショップ・ピラティスなど複数業種で実績を持っており、業種を問わないノウハウを持っています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">開業資金の目安を教えてください。</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">開業資金の目安は400〜500万円です。一般的なサロン系FCの300〜600万円と比較しても競争力のある水準です。物件の状況やエリアによって変動しますので、詳細は個別にご相談ください。金融機関の融資活用についてもアドバイスします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">黒字化まで何ヶ月かかりますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">積み上げ型ビジネスモデルの特性から、初月から黒字化することが可能です。ホットペッパービューティーの掲載最適化を元SVが開業前から着手し、開業後すぐに予約が入る状態を作ります。初期投資の回収期間は1〜2年を目安にしています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-text">複数店舗を経営することはできますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-a">もちろんです。3店舗運営では年間営業利益約3,300万円を目指すことができます。CielraEYEのモデルはFC化を見据えた設計になっており、複数店舗展開にも適しています。まずは1店舗で仕組みを整えてから多店舗展開するオーナーが多くいます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label fadein">CONTACT</p>
+    <div class="divider fadein fadein-delay-1"></div>
+    <h2 class="section-title fadein fadein-delay-1">無料相談・資料請求</h2>
+    <p class="section-lead fadein fadein-delay-2">まずはお気軽にご連絡ください。<br>代表またはFC担当が丁寧にご説明します。</p>
+    <div class="contact-form fadein fadein-delay-2">
+      <div class="form-row">
+        <div class="form-group">
+          <label>お名前 <span class="req">*必須</span></label>
+          <input type="text" placeholder="山田 太郎">
+        </div>
+        <div class="form-group">
+          <label>フリガナ</label>
+          <input type="text" placeholder="ヤマダ タロウ">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>メールアドレス <span class="req">*必須</span></label>
+        <input type="email" placeholder="example@email.com">
+      </div>
+      <div class="form-group">
+        <label>電話番号 <span class="req">*必須</span></label>
+        <input type="tel" placeholder="090-0000-0000">
+      </div>
+      <div class="form-group">
+        <label>ご関心の内容</label>
+        <select>
+          <option value="">選択してください</option>
+          <option>フランチャイズ加盟を検討中</option>
+          <option>資料だけ欲しい</option>
+          <option>まず話を聞きたい</option>
+          <option>複数店舗の展開を検討中</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>ご質問・ご要望</label>
+        <textarea placeholder="ご自由にお書きください。開業時期の目安や現在のお仕事など、ご状況をお聞かせいただけるとスムーズにご対応できます。"></textarea>
+      </div>
+      <button class="form-submit" type="button" onclick="alert('お問い合わせありがとうございます。担当より折り返しご連絡いたします。')">送信する</button>
+    </div>
+    <div class="contact-alt fadein">
+      <div class="contact-alt-item">
+        <span>📞 電話でのお問い合わせ</span>
+        <strong>070-4438-1102</strong>
+      </div>
+      <div class="contact-alt-item">
+        <span>🏢 AndC株式会社</span>
+        <span style="color:rgba(255,255,255,0.5);">担当：津田 栄芯</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CielraEYE</div>
+    <div class="footer-company">AndC株式会社 | まつげ・眉毛の専門店</div>
+    <div class="footer-copy">&copy; 2024 AndC Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="#contact" class="floating-btn">✉ 無料相談・資料請求</a>
+</div>
+
+<script>
+  // Scroll animations
+  const fadeEls = document.querySelectorAll('.fadein');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
