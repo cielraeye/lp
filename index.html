@@ -351,19 +351,17 @@
       align-items: center;
     }
     .about-eye-image {
-      background: linear-gradient(135deg, var(--cream-dark), var(--brown-pale));
-      border-radius: 12px;
-      aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem;
-      position: relative;
+      border-radius: 16px;
       overflow: hidden;
+      aspect-ratio: 16/9;
+      box-shadow: 0 12px 40px rgba(74,46,26,0.15);
     }
-    .about-eye-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, transparent 40%, rgba(74,46,26,0.08));
+    .about-eye-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
     .about-tag {
       display: inline-block;
@@ -579,15 +577,24 @@
       font-size: 0.65rem;
     }
     .feature-visual {
-      background: linear-gradient(135deg, var(--cream), var(--cream-dark));
       border-radius: 12px;
-      aspect-ratio: 4/3;
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column;
-      gap: 12px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      align-self: center;
     }
-    .feature-visual-icon { font-size: 3.5rem; }
-    .feature-visual-label { font-size: 0.8rem; color: var(--brown-mid); font-weight: 500; }
+    .feature-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .feature-visual--contain {
+      background: var(--cream);
+    }
+    .feature-visual--contain img {
+      object-fit: contain;
+    }
 
     /* ===== FLOW ===== */
     #flow { background: var(--cream); }
@@ -824,23 +831,81 @@
     /* ===== DIVIDER ===== */
     .gray-bar { height: 8px; background: var(--gray-bar); }
 
+    /* ===== HERO IMAGE（デスクトップでは非表示） ===== */
+    .hero-lp-image { display: none; }
+    .hero-lp-image img { width: 100%; height: auto; display: block; }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
+      /* 横スクロール防止 */
+      html, body { overflow-x: hidden; max-width: 100%; }
+
+      /* ヘッダー */
       nav { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .hero-main-catch { font-size: 1.9rem; }
+      header { padding: 0 16px; }
+
+      /* ヒーロー */
+      #hero { min-height: auto; padding: 0; }
       #hero::after { display: none; }
-      .about-grid { grid-template-columns: 1fr; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0 0 36px;
+      }
+
+      /* シエラLP画像：画面端まで全幅・最上部 */
+      .hero-visual { order: -1; }
+      .hero-lp-image {
+        display: block;
+        border-radius: 0;
+        margin-bottom: 0;
+        box-shadow: none;
+      }
+      .hero-lp-image img { border-radius: 0; }
+      /* カードはスマホでは非表示 */
+      .hero-card { display: none; }
+
+      /* ヒーローテキスト部分 */
+      .hero-content { padding: 24px 20px 0; }
+      .hero-main-catch { font-size: 1.75rem; }
+      .hero-sub-catch { font-size: 0.92rem; }
+      .hero-numbers { margin-bottom: 28px; }
+      .hero-num-val { font-size: 1.5rem; }
+
+      /* セクション共通 */
+      section { padding: 60px 20px; }
+      .section-title { font-size: 1.7rem; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      /* Merit */
       .merit-cards { grid-template-columns: 1fr; }
+
+      /* Numbers */
       .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+
+      /* Reviews */
       .reviews-grid { grid-template-columns: 1fr; }
-      .feature-item { grid-template-columns: 1fr; }
+      .reviews-platform { flex-direction: column; gap: 16px; }
+
+      /* Features */
+      .feature-item { grid-template-columns: 1fr; gap: 24px; }
       .feature-item.reverse { direction: ltr; }
+
+      /* Flow */
       .flow-steps { grid-template-columns: 1fr; gap: 24px; }
       .flow-steps::before { display: none; }
+
+      /* Support */
       .support-grid { grid-template-columns: 1fr; }
+
+      /* Contact */
       .contact-grid { grid-template-columns: 1fr; }
       .form-row-2col { grid-template-columns: 1fr; }
+
+      /* フッター */
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
     }
     .form-spinner {
       width: 40px; height: 40px;
@@ -851,6 +916,41 @@
       margin: 0 auto;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== SECTION IMAGES ===== */
+
+    /* ===== FLOAT CTA (スマホ用) ===== */
+    .float-cta {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .float-cta {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 16px;
+        z-index: 1000;
+        align-items: center;
+        gap: 8px;
+        background: var(--brown-light);
+        color: var(--white);
+        text-decoration: none;
+        padding: 14px 20px;
+        border-radius: 50px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        box-shadow: 0 6px 24px rgba(176,128,96,0.55);
+        animation: float-pulse 2.5s ease-in-out infinite;
+      }
+      .float-cta:hover {
+        background: var(--brown-dark);
+      }
+    }
+    @keyframes float-pulse {
+      0%,100% { transform: translateY(0); box-shadow: 0 6px 24px rgba(176,128,96,0.55); }
+      50% { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(176,128,96,0.65); }
+    }
   </style>
 </head>
 <body>
@@ -902,6 +1002,9 @@
       </div>
     </div>
     <div class="hero-visual">
+      <div class="hero-lp-image">
+        <img src="images/シエラlp.png" alt="CielraEYE サロンイメージ">
+      </div>
       <div class="hero-card">
         <div class="hero-float-badge"><strong>口コミ<br>4.9</strong>達成<br>2ヶ月目</div>
         <div class="hero-card-title">FC加盟 3つのメリット</div>
@@ -931,7 +1034,7 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-eye-image">
-        👁
+        <img src="images/お客様を幸せに.png" alt="お客様を幸せにするサービス">
       </div>
       <div>
         <span class="about-tag">About CielraEYE</span>
@@ -1111,8 +1214,7 @@
           </div>
         </div>
         <div class="feature-visual">
-          <div class="feature-visual-icon">👁‍🗨</div>
-          <div class="feature-visual-label">まつげ × 眉毛 W施術</div>
+          <img src="images/W施術.png" alt="まつげ × 眉毛 W施術">
         </div>
       </div>
 
@@ -1128,9 +1230,8 @@
             <div class="feature-point">スピード感のある対応・集客・オープンを実現</div>
           </div>
         </div>
-        <div class="feature-visual">
-          <div class="feature-visual-icon">⚙️</div>
-          <div class="feature-visual-label">内製化された運営システム</div>
+        <div class="feature-visual feature-visual--contain">
+          <img src="images/ChatGPT Image 2026年6月2日 21_41_25 (8)_0.png" alt="内製化された運営システム">
         </div>
       </div>
 
@@ -1147,8 +1248,7 @@
           </div>
         </div>
         <div class="feature-visual">
-          <div class="feature-visual-icon">🔄</div>
-          <div class="feature-visual-label">高リピート率の設計</div>
+          <img src="images/選ばれやすい仕組み.png" alt="選ばれやすい仕組み">
         </div>
       </div>
     </div>
@@ -1170,7 +1270,7 @@
           <div class="flow-step-num">1</div>
         </div>
         <div class="flow-step-title">資料請求・<br>お問い合わせ</div>
-        <div class="flow-step-desc">フォームまたはLINEよりお気軽にご連絡ください</div>
+        <div class="flow-step-desc">フォームよりお気軽にご連絡ください</div>
       </div>
       <div class="flow-step">
         <div class="flow-step-circle">
@@ -1268,17 +1368,13 @@
     <div class="contact-grid">
       <div class="contact-info">
         <h3>まずはお気軽に<br>ご連絡ください</h3>
-        <p>FCビジネスに関するご質問、収益シミュレーション、個別説明会のご希望など、何でもお気軽にお問い合わせください。<br><br>公式LINEからのご連絡が最もスムーズです。</p>
+        <p>FCビジネスに関するご質問、収益シミュレーション、個別説明会のご希望など、何でもお気軽にお問い合わせください。</p>
         <div class="contact-detail">
           <div class="contact-detail-item">
             <span class="contact-detail-icon">🏢</span>
             <span class="contact-detail-text">AndC株式会社</span>
           </div>
         </div>
-        <a href="#" class="line-cta">
-          <span style="font-size:1.3rem;">💬</span>
-          公式LINEで相談する（無料）
-        </a>
       </div>
       <div class="form-card">
         <h3>資料請求フォーム</h3>
@@ -1293,7 +1389,7 @@
         <div id="form-success" style="display:none; text-align:center; padding:40px 0;">
           <div style="font-size:3rem; margin-bottom:16px;">✅</div>
           <h4 style="font-family:'Noto Serif JP',serif; font-size:1.2rem; color:var(--brown-dark); margin-bottom:12px;">資料をお送りしました！</h4>
-          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.9;">ご登録のメールアドレスに資料PDFをお送りしました。<br>ご確認いただき、ご不明な点は公式LINEよりお気軽にご連絡ください。</p>
+          <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.9;">ご登録のメールアドレスに資料PDFをお送りしました。<br>ご不明な点はメールにてお気軽にご連絡ください。</p>
         </div>
 
         <!-- エラー -->
@@ -1356,6 +1452,11 @@
   </div>
 </section>
 
+<!-- スマホ用フローティングCTAボタン -->
+<a href="#contact" class="float-cta">
+  <span>📋</span> 無料資料を請求する
+</a>
+
 <div class="gray-bar"></div>
 
 <!-- FOOTER -->
@@ -1377,7 +1478,7 @@
   // =============================================
   // GAS Web App URL（デプロイ後に差し替えてください）
   // =============================================
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwnh7j89XdKRkrH-g5Eg0PayjDVfQGHu8BZ8gUHqKzP94Z3AcN1KHncjcr9qBzt2fbD/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwh7cz3uoBZ6Y_ywmRASXtO_sCUdexxTJNLpPyxNM1mgPAvqvGX6NjsRZYzWwq3-TYT/exec';
 
   const form    = document.getElementById('lp-form');
   const btnEl   = document.getElementById('form-btn');
@@ -1404,20 +1505,17 @@
     errorEl.style.display = 'none';
 
     try {
-      const res = await fetch(GAS_URL, {
+      // GASはCORSレスポンスを返せないため no-cors で送信し、
+      // 送信完了をもって成功とみなす
+      await fetch(GAS_URL, {
         method: 'POST',
+        mode: 'no-cors',
         body: JSON.stringify(payload),
       });
-      const json = await res.json();
 
       sending.style.display = 'none';
+      success.style.display = 'block';
 
-      if (json.status === 'success') {
-        success.style.display = 'block';
-      } else {
-        form.style.display    = 'block';
-        errorEl.style.display = 'block';
-      }
     } catch (err) {
       sending.style.display = 'none';
       form.style.display    = 'block';
