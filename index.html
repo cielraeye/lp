@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CielraEYE FC加盟募集 | まつげ・眉毛の専門店 AndC株式会社</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18209836874"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18209836874');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -1515,7 +1524,7 @@
 
       sending.style.display = 'none';
       success.style.display = 'block';
-      history.pushState({}, '', '/lp/thanks');
+      try { history.pushState({}, '', '/lp/thanks'); } catch(_) {}
 
     } catch (err) {
       sending.style.display = 'none';
